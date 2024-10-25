@@ -1,0 +1,11 @@
+n=-6:1:6; 
+h=ones(13,1); 
+subplot(1,2,1); stem(n,h,'k');  
+axis([-6 6 0 1.2]); title('H(n)  '); xlabel('n'); 
+H1=real(fft(h,512)); Hf=H1/max(H1); 
+w=-pi:(2*pi/511):pi; 
+subplot(1,2,2); plot(w,fftshift(Hf),'k');
+axis([-pi pi -0.3 1]); title(['Ket qua bai 4 nhom Anh Tuan va Van Quang']); 
+xlabel('normalized frequency'); 
+hold on;
+plot([-pi pi],[0 0],'--k');
